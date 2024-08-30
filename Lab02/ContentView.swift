@@ -30,14 +30,10 @@ struct ContentView: View {
                 HStack {
                     VStack{
                         Text ("Basic")
-                            .fontWeight(.black)
-                            .font(.largeTitle)
-                            .bold()
+                            .modifier(PricingText())
                             .foregroundStyle(.white)
                         Text ("$9")
-                            .fontWeight(.black)
-                            .font(.largeTitle)
-                            .bold()
+                            .modifier(PricingText())
                             .foregroundStyle(.white)
                         Text ("per month")
                             .font(.headline)
@@ -47,13 +43,9 @@ struct ContentView: View {
                         .frame(width: 120)
                     VStack{
                         Text ("Pro")
-                            .fontWeight(.black)
-                            .font(.largeTitle)
-                            .bold()
+                            .modifier(PricingText())
                         Text ("$19")
-                            .fontWeight(.black)
-                            .font(.largeTitle)
-                            .bold()
+                            .modifier(PricingText())
                         Text ("per month")
                             .font(.headline)
                     }
@@ -64,13 +56,9 @@ struct ContentView: View {
                     .foregroundStyle(.yellow)
                 VStack {
                     Text ("Team")
-                        .fontWeight(.black)
-                        .font(.largeTitle)
-                        .bold()
+                        .modifier(PricingText())
                     Text ("$199")
-                        .fontWeight(.black)
-                        .font(.largeTitle)
-                        .bold()
+                        .modifier(PricingText())
                     Text ("per month")
                         .font(.headline)
                 }
@@ -84,6 +72,15 @@ struct ContentView: View {
 struct PricingView: View {
 var body: some View {
     RoundedRectangle(cornerRadius: 20)
+    }
+}
+
+struct PricingText: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .fontWeight(.black)
+            .font(.largeTitle)
+            .bold()
     }
 }
 
